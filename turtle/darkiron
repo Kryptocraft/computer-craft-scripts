@@ -1,0 +1,14 @@
+-- Place turtle 3 blocks from fire in wrath forge
+-- Place iron blocks in slot 16
+-- Turtle will advance into position and start placing iron blocks and picking up the dark iron blocks
+-- when slot 16 is empty, turtle will backup one space to be picked up
+turtle.forward()
+while turtle.getItemCount(16) > 0
+do
+  turtle.select(16)
+  turtle.place()
+  sleep(2)
+  turtle.select(1)
+  turtle.dig()
+end
+turtle.back()
